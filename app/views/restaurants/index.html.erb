@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 text-left">
+      <h2>Restaurant List</h2>
+      <%= link_to "Add a restaurant", new_restaurant_path %>
+      <ul>
+        <% @restaurants.each do |restaurant| %>
+          <li class="list-padding">
+          <%= link_to restaurant.name, restaurant_path(restaurant)%>
+          <ul>
+            <li>
+              <%= restaurant.address %>
+            </li>
+            <li>
+              <%= restaurant.phone_number %>
+            </li>
+            <li>
+              <%= restaurant.category %>
+            </li>
+          </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</div>
